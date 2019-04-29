@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><!--キャラセット-->
+  <title>太郎のポートフォリオサイト</title>
+  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="太郎のポートフォリオサイトです">
+  <!--メタタグはサイトの説明descriptionが文書の属性、contentは説明-->
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+  <!-- header -->
+  <header>
+    <!--
+      ol: (o)rdered (l)ist連番付きリスト
+      u:  (u)nordered (l)ist
+      li: (l)ist (i)tem-->
+    <nav>
+      <ul>
+        <li class="current">
+          <a href="index.html">
+            HOME
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            ABOUT
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <img src="img/taro.png" width="140" height="140" alt="太郎のアイコン"alt="太郎のアイコン" class="icon"><!--alt(オルト)-->
+    <h1>山田太郎</h1><!--ｈヘッダー-->
+    <p>UI/UXデザイナー見習いです</p><!--pパラグラフ-->
+
+    <div class="works">
+      <section>
+        <img src="img/work1.png" width="400" height=260 alt="勇者ゲーム">
+        <h1>勇者ゲーム</h1>
+        <p>楽しいゲームです楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。</p>
+      </section>
+
+      <section>
+        <img src="img/work2.png" width="400" height=260 alt="宝探しゲーム">
+        <h1>宝探しゲーム</h1>
+        <p>楽しいゲームです楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。</p>
+      </section>
+
+      <section>
+        <img src="img/work3.png" width="400" height=260 alt="神経衰弱">
+        <h1>神経衰弱</h1>
+        <p>楽しいゲームです楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。楽しいゲームです。</p>
+      </section>
+    </div>
+  </section>
+
+  <footer>
+    <ul>
+      <li>
+        <a href="mailto:gobou.0918@gmail.com" target="_blank">
+          <img src="img/mail.png" width="20" height="20" alt="メール送信">
+        </a>
+      </li>
+      <li>
+        <a href="http://dotinstall.com" target="_blank">
+          <img src="img/blog.png" width="20" height="20" alt="ブログサイトへ">
+        </a>
+      </li>
+      <li>
+        <a href="http://dotinstall.com" target="_blank">
+          <img src="img/photos.png" width="20" height="20" alt="写真サイトへ">
+        </a>
+      </li>
+    </ul>
+    <p>(c)Taro Yamada</p>
+  </footer>
+  <div id="back-to-top" style="position:fixed; right:5px; bottom:5px;">
+    <a href="#"><img src="img/back-to.png"></a></div>
+  <div id="pos" style="position:fixed; left:5px; bottom:5px;"></div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        // #back-to-topを消す
+        $('#back-to-top').hide();
+        //スクロールが十分されたらback-to-topを表示、スクロールが戻ったら非表示
+        $(window).scroll(function() {
+          $('#pos').text($(this).scrollTop());
+          if ($(this).scrollTop() > 60) {
+            $('#back-to-top').fadeIn();
+          }else{
+            $('#back-to-top').fadeOut();
+          }
+        });
+        //back-to-topがクリックされたら上に戻る
+        $('#back-to-top a').click(function() {
+          $('html,body').animate({
+            scrollTop:0
+          }, 500);
+          return false;
+        });
+
+      });
+    </script>
+
+</body>
+</html>
